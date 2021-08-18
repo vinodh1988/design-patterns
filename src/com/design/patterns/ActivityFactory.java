@@ -20,11 +20,11 @@ public class ActivityFactory {
      public static Activity getInstance(String type) {
     	 switch(type) {
     	   case "test":
-    		    return testing;
+    		    return new SecurityDecorator(testing);
     	   case "debug":
-    		    return debugging;
+    		    return  new SecurityDecorator(debugging);
     	   case "build":
-    		    return building;
+    		    return new SecurityDecorator(building);
     	   case "network":
     		     return new ActivityAdapter(networktask);
     	   case "os":
